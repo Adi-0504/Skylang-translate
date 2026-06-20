@@ -1,13 +1,13 @@
 {
-  "name": "SkyLang Engine",
+  "name": "SkyLang",
   "short_name": "SkyLang",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f0f10",
-  "theme_color": "#0f0f10",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "icons/icon.png",
+      "src": "./icon/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
