@@ -1,38 +1,34 @@
-<<<<<<< HEAD
 function syllabify(input){
 
-  const tokens = input.trim().split(/\s+/);
+  const text = input.replace(/\s+/g, "");
 
   let result = [];
+  let i = 0;
 
-  for(let t of tokens){
+  while(i < text.length){
 
-    let c = t[0];
-    let v = t[1];
+    const c = text[i];
+    const v = text[i + 1];
 
-    if(!c || !v) continue;
+    // C only
+    if(!v || !/[aeiou]/.test(v)){
+      result.push(c);
+      i += 1;
+      continue;
+    }
 
-    result.push(c + v);
+    // CV / CVh
+    let syllable = c + v;
+
+    if(text[i + 2] === "h"){
+      syllable += "h";
+      i += 3;
+    }else{
+      i += 2;
+    }
+
+    result.push(syllable);
   }
 
   return result;
-=======
-function syllabify(input){
-
-  const tokens = input.trim().split(/\s+/);
-
-  let result = [];
-
-  for(let t of tokens){
-
-    let c = t[0];
-    let v = t[1];
-
-    if(!c || !v) continue;
-
-    result.push(c + v);
-  }
-
-  return result;
->>>>>>> be29b5d36a7a3799c3ce96a645aaa06373de72f4
 }
